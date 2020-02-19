@@ -1,0 +1,49 @@
+
+/* aspect general */
+html {
+    width: 75vw;
+    padding: 3vh 3vw;
+    background-color: #ffffee;
+}
+
+body {
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.bicolor {
+    padding: 2% 5% 5% 5%;
+    background: linear-gradient(110deg, #fdcd3bee 14%, #ffed4bee 14%);
+}
+
+.ensemble {
+    white-space:nowrap;
+}
+
+
+button {
+    margin: 0 0 0 0;
+    padding: 4px 0 4px 0;
+    font: bold 13px Arial;
+    background: #478bf9;
+    color: #fff;
+    border-radius: 2px;
+    width: 100px;
+    border: none;
+}
+
+
+.flexContainer {
+	 display: flex;
+	 text-align : center;
+}
+
+.flexitem  {
+	margin: 4px 0 0 0;
+	flex-basis: 175px;
+}
+
+input[type=number] {
+	width: 50px;
+}
+
+
