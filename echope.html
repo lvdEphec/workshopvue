@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ventes</title>
+  <link rel="stylesheet" href="css/echope.css">
+  <!-- 1. joindre script Vue.js -->
+  <script src="js/echope.js"></script>
+</head>
+<body>
+<div class="bicolor">
+
+  <main id="zoneMagasin">
+  
+	  <!-- ------------ Parametres --------------------------- -->
+		
+	  <h1 >Titre magasin</h1> <!-- 2c A lier avec le titre avec {{ }} -->
+
+	  <label for="promo">Promotion % :</label>
+	  <input id="promo" type="number"> <!-- 5a A lier en bidirectionnel avec la promo v-model -->
+	  
+	  <br>
+	  
+	  <label for="tva">TVA % :</label>
+	  <input  id="tva" type="number"> <!-- 5b A lier en bidirectionnel avec la promo  v-model-->
+	  
+	  <!-- ---------------- Liste articles ----------------------- -->	
+	  
+	  <h2 >Sous-titre articles</h2> <!-- 6 A lier en bidirectionnel avec un sous-titre avec {{ }}-->
+	   
+	   <ul>
+		  <li class="flexContainer"> <!-- 7a avec une boucle v-for parcourir les articles -->
+			 <span class="flexitem"><strong>article libelle</strong></span> <!-- 7b afficher libelle de l'article -->
+			 <span class="flexitem">Prix unitaire : <strong>article prix €</strong></span> <!-- 7b afficher prix de l'article -->
+			 <span class="flexitem"><button>Acheter</button></span> <!-- 7c avec v-on si un clic, allors appeler acheter(code) -->
+			 <span class="flexitem"> <!-- 7d avec v-if, s'il y a un achat pour le code et que la quantité > 0 -->
+				<label for="CODE">Quantité : </label>    <!-- 7e v-bind pour mettre le code en id -->
+				<input id="CODE" type="number" min="0"> <!-- 7f lien bidirectionnel vers l'attribut code de l'objet achats avec v-model -->
+			 </span>
+		  </li>
+	   </ul>
+	   
+	   <!-- -------------- Liste achats ------------------------- -->
+	   
+	   <h2 >Sous-titre achats</h2> <!-- 6 A lier en bidirectionnel avec un sous-titre avec {{ }} -->
+	   
+	   <!-- TODO : afficher un récapitulatif des achats -->
+		  
+
+		<!-- -------------- Prix  ------------------------- -->
+		
+		<div id="totalVentesBase">
+		  <p>Prix : 999999 €</p> <!-- 9 Afficher le prix total de base, valeur computed totalAchatsBase -->
+		</div>
+		
+		<div id="totalVentesTvac">
+		  <p>Prix TVAC : <strong>999999 €</strong></p> <!-- 9 Afficher le prix total avec TVA, valeur computed totalAchatsTvac -->
+		</div>
+		
+		
+		  <p>Prix avec Promotion TVAC :  <strong>999999 €</strong></p> 
+		  <!-- 9 SI LA PROMO >0, avec v-if alors afficher le prix total avec tva et promo, valeur computed totalAchatsPromotionTvac -->
+		</div>
+
+  </main>
+</div>
+</body>
+</html>
